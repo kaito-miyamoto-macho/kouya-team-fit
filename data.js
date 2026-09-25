@@ -95,12 +95,12 @@ const roles=[
  {id:'igl',name:'IGL / 司令塔',weights:{spotting:2,awareness:3,decisionMaking:4,teamwork:3,positioning:1},core:['spotting','awareness','decisionMaking','teamwork'],description:'敵味方の情報をまとめ、チームの移動と交戦の判断を共有する。'}
 ];
 const weapons=[
- {id:'lowAR',name:'低反動AR',weights:{dynamicAim:3,recoilControl:1,firingLine:2},core:['dynamicAim'],description:'追いエイムと射線を活かす、中距離の軸。'},
- {id:'highAR',name:'高反動AR',weights:{recoilControl:4,dynamicAim:2,initialAim:1},core:['recoilControl','dynamicAim'],description:'連射を制御できる場合の候補。反動が負担なら無理に選ばない。'},
- {id:'smg',name:'SMG',weights:{dynamicAim:3,closeCombat:3,initialAim:2},core:['dynamicAim','closeCombat'],description:'近距離で動く敵を追い、継続して当てる用途。'},
- {id:'sg',name:'SG',weights:{initialAim:4,closeCombat:3,positioning:1},core:['initialAim','closeCombat'],description:'近距離で最初の一発を合わせ、遮蔽を使う用途。'},
- {id:'bolt',name:'ボルトアクションSR',weights:{staticAim:4,positioning:2,firingLine:2},core:['staticAim','positioning'],description:'狙う時間を作り、静止敵や小さな標的を精密に撃つ用途。'},
- {id:'dmr',name:'連射系SR / DMR系',weights:{staticAim:2,dynamicAim:2,recoilControl:2,positioning:1},core:['staticAim','recoilControl'],description:'中〜遠距離で狙い直しながら、継続して削る用途。'}
+ {id:'lowAR',name:'低反動AR',examples:['M4A1','AUG','M27'],weights:{dynamicAim:3,recoilControl:1,firingLine:2},core:['dynamicAim'],description:'追いエイムと射線を活かす、中距離の軸。'},
+ {id:'highAR',name:'高反動AR',examples:['AK-47','HK50','95式'],weights:{recoilControl:4,dynamicAim:2,initialAim:1},core:['recoilControl','dynamicAim'],description:'連射を制御できる場合の候補。反動が負担なら無理に選ばない。'},
+ {id:'smg',name:'SMG',examples:['MP5','MK5','UZI'],weights:{dynamicAim:3,closeCombat:3,initialAim:2},core:['dynamicAim','closeCombat'],description:'近距離で動く敵を追い、継続して当てる用途。'},
+ {id:'sg',name:'SG',examples:['M860','M88C','SK12'],weights:{initialAim:4,closeCombat:3,positioning:1},core:['initialAim','closeCombat'],description:'近距離で最初の一発を合わせ、遮蔽を使う用途。'},
+ {id:'bolt',name:'ボルトアクションSR',examples:['CS LR4','M24','AWM'],weights:{staticAim:4,positioning:2,firingLine:2},core:['staticAim','positioning'],description:'狙う時間を作り、静止敵や小さな標的を精密に撃つ用途。'},
+ {id:'dmr',name:'連射系SR / DMR系',examples:['SVD','88式','VAL'],weights:{staticAim:2,dynamicAim:2,recoilControl:2,positioning:1},core:['staticAim','recoilControl'],description:'中〜遠距離で狙い直しながら、継続して削る用途。'}
 ];
 const data={version:'1.0',abilities,base,branches,checks,roles,weapons,q,o};
 if(typeof module!=='undefined'&&module.exports)module.exports=data;
