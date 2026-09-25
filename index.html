@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101916">
+<meta name="description" content="荒野行動のチーム適性診断。22〜25問から12能力・7つの役割・武器カテゴリの適性をチェック。回答は外部に送信されません。">
+<title>荒野行動 チーム適性診断 | SQUAD FIT</title>
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="./style.css">
+<script defer src="./data.js"></script>
+<script defer src="./engine.js"></script>
+<script defer src="./app.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">診断へ移動</a>
+<header class="site-header"><a class="brand" href="./" aria-label="SQUAD FIT トップ"><span class="brand-mark" aria-hidden="true">＋</span>SQUAD<span>FIT</span></a><span class="header-label">荒野行動 / チーム適性診断</span><span class="edition">非公式診断</span></header>
+<div class="shell">
+<aside class="intro" aria-label="診断について">
+ <div class="eyebrow">荒野行動 チーム適性診断</div>
+ <h1>チームで活きる、<br><span>あなたの戦い方。</span></h1>
+ <p class="intro-copy">撃つ、見つける、支える。<br>12の能力から、任せたい役割が見えてくる。</p>
+ <div class="specs"><span><strong>22–25</strong> 問</span><span><strong>3–5</strong> 分</span></div>
+ <div class="index-panel"><span class="eyebrow">ASSESSMENT</span><ol class="chapter-list"><li data-group="プレイ傾向"><span>01</span>プレイ傾向</li><li data-group="射撃と操作"><span>02</span>射撃と操作</li><li data-group="情報と位置"><span>03</span>情報と位置</li><li data-group="判断と連携"><span>04</span>判断と連携</li><li data-group="追加確認"><span>＋</span>回答に応じた追加確認</li></ol></div>
+ <label class="name-label" for="player-name">プレイヤー名 <span>任意</span></label><input id="player-name" type="text" maxlength="30" placeholder="チーム内で使う名前" autocomplete="off">
+ <p class="privacy">回答は外部に送信・保存されません。<br>ページを閉じると回答は消えます。</p>
+</aside>
+<main id="main" tabindex="-1">
+ <section id="question-view" aria-label="診断の質問">
+  <div class="progress-heading"><span id="section-label">プレイ傾向</span><span id="progress-label">01 / 22〜25問</span></div>
+  <div id="progress" class="progress" role="progressbar" aria-label="回答の進み具合" aria-valuemin="0" aria-valuemax="25" aria-valuenow="0"><span></span></div>
+  <div class="question-card"><div class="question-meta"><span id="question-number">QUESTION 01</span><span id="branch-badge" hidden>追加質問</span></div><h2 id="question-title" tabindex="-1"></h2><p id="question-hint" class="muted"></p>
+  <form id="answer-form"><fieldset id="options" aria-labelledby="question-title"><legend class="sr-only">一番近い回答を一つ選んでください</legend></fieldset><div class="question-actions"><button id="back" type="button" class="button secondary">前の質問</button><button id="next" type="submit" class="button primary" disabled>次へ <span aria-hidden="true">→</span></button></div></form>
+  </div>
+  <div class="under-card"><p>「理想」より「実際どうなるか」で。<br>迷うときは「分からない」で大丈夫。</p><button id="finish-early" class="text-button" type="button" hidden>ここまでの回答で診断する</button></div>
+ </section>
+ <section id="result-view" hidden aria-label="診断結果"></section>
+ <noscript><div class="question-card">この診断にはJavaScriptが必要です。ブラウザの設定でJavaScriptを有効にしてください。</div></noscript>
+</main>
+</div>
+<footer class="site-footer"><span>SQUAD FIT <span class="footer-slash">/</span> 自分を知って、チームで活かす。</span><span>荒野行動の非公式ファン制作診断。運営元とは関係ありません。</span></footer>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<dialog id="copy-dialog"><form method="dialog"><h2>結果テキスト</h2><p>コピーできない場合は、下のテキストを選択してコピーしてください。</p><textarea id="copy-text" readonly aria-label="診断結果テキスト"></textarea><button class="button primary" value="close">閉じる</button></form></dialog>
+</body>
+</html>
