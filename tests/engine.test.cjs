@@ -49,6 +49,12 @@ test('Partial diagnosis is resumable and copy includes all requested output',()=
  const r=E.diagnose({style:0,close:1,ar:1,sr:1,precision:1});assert.equal(r.complete,false);assert.equal(r.answered,5);
  const text=E.toText(r,'テスト');for(const heading of ['能力カルテ','役割適性','武器カテゴリ適性','推奨立ち回り','チームメイトへの取扱説明書','テスト'])assert.ok(text.includes(heading));
 });
+test('Every weapon category exposes three concrete examples in the result and copy',()=>{
+ assert.equal(D.weapons.length,6);
+ assert.ok(D.weapons.every(w=>Array.isArray(w.examples)&&w.examples.length===3));
+ const a=complete(base(q=>0),q=>0),r=E.diagnose(a),text=E.toText(r);
+ for(const weapon of D.weapons)for(const example of weapon.examples)assert.ok(text.includes(example));
+});
 test('2,000 deterministic answer paths satisfy rating, branching and safety invariants',()=>{
  let seed=872;const rnd=n=>{seed=(seed*1664525+1013904223)>>>0;return seed%n;};
  for(let i=0;i<2000;i++){
